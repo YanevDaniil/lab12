@@ -1,0 +1,811 @@
+{
+	"info": {
+		"_postman_id": "3f04123c-f882-46a3-8655-47d9e1566490",
+		"name": "lab12",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34188607",
+		"_collection_link": "https://www.postman.com/blazedenshinobu/workspace/my-workspace/collection/34188607-3f04123c-f882-46a3-8655-47d9e1566490?action=share&source=collection_link&creator=34188607"
+	},
+	"item": [
+		{
+			"name": "arithmetic",
+			"item": [
+				{
+					"name": "error",
+					"item": [
+						{
+							"name": "Ошибка. Сложение",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"Операция не поддерживается\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/arithmetic/df+ntrn",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"arithmetic",
+										"df+ntrn"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ошибка. Деление",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"Некорректное выражение ['99', ':', '', '!', '']\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/arithmetic/99:!",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"arithmetic",
+										"99:!"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ошибка. Нет выражения",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"Нет выражения\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/arithmetic",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"arithmetic"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Сложение",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).is.eql(\"5.0 + 7.0 = 12.0\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://blazedenshinobu.pythonanywhere.com/arithmetic/5+7",
+							"protocol": "http",
+							"host": [
+								"blazedenshinobu",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"arithmetic",
+								"5+7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Вычитание",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).is.eql(\"100.0 - 1.0 = 99.0\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://blazedenshinobu.pythonanywhere.com/arithmetic/100-1",
+							"protocol": "http",
+							"host": [
+								"blazedenshinobu",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"arithmetic",
+								"100-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Умножение",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).is.eql(\"5.5 * 6.7 = 36.85\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://blazedenshinobu.pythonanywhere.com/arithmetic/5.5*6.7",
+							"protocol": "http",
+							"host": [
+								"blazedenshinobu",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"arithmetic",
+								"5.5*6.7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Деление",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).is.eql(\"457.9 : 75.6 = 6.056878306878307\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://blazedenshinobu.pythonanywhere.com/arithmetic/457.9:75.6",
+							"protocol": "http",
+							"host": [
+								"blazedenshinobu",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"arithmetic",
+								"457.9:75.6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Степень",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).is.eql(\"2.5 ** 5.4 = 140.88866268625137\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://blazedenshinobu.pythonanywhere.com/arithmetic/2.5**5.4",
+							"protocol": "http",
+							"host": [
+								"blazedenshinobu",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"arithmetic",
+								"2.5**5.4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Корень",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).is.eql(\"87.1 sqrt 4.89786 = 2.4894021534945563\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://blazedenshinobu.pythonanywhere.com/arithmetic/87.1sqrt4.89786",
+							"protocol": "http",
+							"host": [
+								"blazedenshinobu",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"arithmetic",
+								"87.1sqrt4.89786"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Остаток от деления",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).is.eql(\"10.0 ! 4.5 = 1.0\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://blazedenshinobu.pythonanywhere.com/arithmetic/10!4.5",
+							"protocol": "http",
+							"host": [
+								"blazedenshinobu",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"arithmetic",
+								"10!4.5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Целочисленное деление",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).is.eql(\"23.47769 :: 5.67 = 4.0\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://blazedenshinobu.pythonanywhere.com/arithmetic/23.47769::5.67",
+							"protocol": "http",
+							"host": [
+								"blazedenshinobu",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"arithmetic",
+								"23.47769::5.67"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "trigonometric",
+			"item": [
+				{
+					"name": "deg",
+					"item": [
+						{
+							"name": "Синус",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"sin(90.0°) = 1.0\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/trigonometric/deg/sin90",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"trigonometric",
+										"deg",
+										"sin90"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Арксинус",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"asin(44.4°) = 0.8865983048780236\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/trigonometric/deg/asin44.4",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"trigonometric",
+										"deg",
+										"asin44.4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Косинус",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"cos(60.0°) = 0.5000000000000001\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/trigonometric/deg/cos60",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"trigonometric",
+										"deg",
+										"cos60"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Арккосинус",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"acos(1.000002°) = 1.5533421131454086\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/trigonometric/deg/acos1.000002",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"trigonometric",
+										"deg",
+										"acos1.000002"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Тангенс",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"tg(45.0°) = 0.9999999999999999\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/trigonometric/deg/tg45",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"trigonometric",
+										"deg",
+										"tg45"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Арктангенс",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"atg(10000.0°) = 1.5650668115393365\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/trigonometric/deg/atg10000",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"trigonometric",
+										"deg",
+										"atg10000"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "error",
+					"item": [
+						{
+							"name": "Неопределенный арксинус",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"asin(180.0) = Undefined\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/trigonometric/asin180",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"trigonometric",
+										"asin180"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Неопределенный арккосинус",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"acos(100.0) = Undefined\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/trigonometric/acos100",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"trigonometric",
+										"acos100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ошибка. Нет выражения (радианы)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"Нет выражения (радианы)\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/trigonometric",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"trigonometric"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ошибка. Нет выражения (градусы)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"Нет выражения (градусы)\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/trigonometric/deg",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"trigonometric",
+										"deg"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ошибка. Некорректное выражение",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).is.eql(\"Некорректное выражение\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://blazedenshinobu.pythonanywhere.com/trigonometric/deg/sinHELLO",
+									"protocol": "http",
+									"host": [
+										"blazedenshinobu",
+										"pythonanywhere",
+										"com"
+									],
+									"path": [
+										"trigonometric",
+										"deg",
+										"sinHELLO"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
